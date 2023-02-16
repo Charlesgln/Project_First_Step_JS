@@ -6,13 +6,11 @@ const dot = document.querySelectorAll('.dot');
 let i = 0;
 
 
-function add_dot_selected()  {
-	dot.toString()
+function addDotSelected()  {
     dot[i].classList.add("dot_selected")
 };
 
-function remove_dot_selected() {
-	dot.toString()
+function removeDotSelected() {
 	dot[i].classList.remove("dot_selected")
 };
 
@@ -37,34 +35,34 @@ const slides = [
 
 
 arrowLeft.addEventListener("click", () => {	
-	remove_dot_selected();
+	removeDotSelected();
 	i == i -- ;
 	if (i < 0) {
 		i = 3;
 		bannerImage.src = `./assets/images/slideshow/${slides[i].image}`
 		bannerText[0].innerHTML =  slides[i].tagLine
-		add_dot_selected();
+		addDotSelected();
 	} else {
 		bannerImage.src = `./assets/images/slideshow/${slides[i].image}`
 		bannerText[0].innerHTML = `<p>${slides[i].tagLine}</p>`
-		add_dot_selected();
+		addDotSelected();
 	}
 }
 )
 
 	arrowRight.addEventListener("click", () => {
-		remove_dot_selected();
+		removeDotSelected();
 		i == i ++;
 		if (i > 3) {
 			i = 0;
 			bannerImage.src = `./assets/images/slideshow/${slides[i].image}`;
 			bannerText[0].innerHTML =  slides[i].tagLine ;
-			add_dot_selected();
+			addDotSelected();
 			
 		} else {
 			bannerText[0].innerHTML =  slides[i].tagLine ;
 			bannerImage.src = `./assets/images/slideshow/${slides[i].image}`;
-			add_dot_selected();
+			addDotSelected();
 			
 		}
 	}
